@@ -1,6 +1,6 @@
-hello_world: hello_world.o
-	gcc hello_world.o -o hello_world
-hello_world.o: hello_world.c
-	gcc -c hello_world.c
+CC := $(CROSS_COMPILE)gcc
+
+hello_world: hello_world.c
+	$(CC) -o hello_world hello_world.c -I.
 clean:
 	rm -f hello_world hello_world.o
